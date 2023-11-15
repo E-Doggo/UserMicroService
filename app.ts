@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import userRouter from "./src/user-microservice/api-endpoint/routes";
+import userRouter from "./src/api-endpoint/routes";
 
 dotenv.config();
 

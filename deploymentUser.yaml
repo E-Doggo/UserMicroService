@@ -14,8 +14,8 @@ spec:
         app: web
     spec:
       containers:
-        - name: rodrigoguardia
-          image: micro-service-user-image
+        - name: user-service
+          image: micro-service-user-image:1.0
           imagePullPolicy: Never
 ---
 apiVersion: v1
@@ -24,10 +24,10 @@ metadata:
   name: user-service-entrypoint
   namespace: default
 spec:
+spec:
   type: NodePort
   selector:
-    bb: web
+    app: web  
   ports:
-    - port: 3000
-      targetPort: 3000
-      nodePort: 30001
+    - port: 80
+      targetPort: 8080
